@@ -1,7 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.<br />
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app){:target="_blank"}, using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.<br />
 Server side was created with nodeJS using Express and MongoDB database.
 
 ## About the website
+
+<p><a href="https://wine-shop-poc.netlify.app/" target="_blank" rel="noreferrer" /></p>
 
 This is a simple React/Redux exercise POC for wine shop website.<br />
 It includes basic features such as login and sign up and two pages for shopping and feedback which are not implemented in the scope of this POC.
