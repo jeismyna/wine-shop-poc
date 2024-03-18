@@ -1,0 +1,47 @@
+.logo {
+    width: 50px !important;
+    height: 50px !important;
+    color: #fff;
+    text-decoration: none;
+    stroke-width: 1px;
+    stroke: #fff;
+}
+
+.logoPadding {
+    padding: 0 !important;
+}
+
+.greeting {
+    display: flex;
+}
+
+.greetingMargin {
+    margin: auto;
+}
+
+.toolbar {
+    padding: 0 !important;
+}
+
+.linkDecoration, .linkDecoration:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.textAlignStart {
+    text-align: start;
+}
+
+.textAlignEnd {
+    text-align: end;
+}
+
+.buttons {
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.buttons:hover {
+    border-color: #ccaefd !important;
+    color: #ccaefd !important;
+}
