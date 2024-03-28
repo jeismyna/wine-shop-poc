@@ -20,4 +20,4 @@ app.get("/", (req, res) => {
 
 app.use("/api", userRouter)
 
-app.listen(PORT)
+app.listen(PORT, () => console.log(`server listening on port ${PORT}`));

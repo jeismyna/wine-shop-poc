@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose
-    .connect('mongodb+srv://'+ process.env.REACT_APP_DB_USER + ':' + process.env.REACT_APP_DB_PASS + '@cluster0.uoxbe.mongodb.net/wine-shop?retryWrites=true&w=majority')
+    .connect(process.env.REACT_APP_DB_CONNECTION_STRING)
     .catch(e => {
         console.error('Connection error', e.message)
     })
