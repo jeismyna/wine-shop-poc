@@ -57,12 +57,12 @@ export default function NavigationBar(rest) {
               </RouterLink>
             ) : (
               <Col md={12} className={styles.greeting}>
-                <Col md={10} className={styles.greetingMargin}>
+                <Col xs={3} md={9} className={styles.greetingMargin}>
                   <Typography variant="subtitle2">
                     Hello {rest.auth.firstName}
                   </Typography>
                 </Col>
-                <Col md={2}>
+                <Col xs={9} md={3}>
                   <Button
                     variant="outlined"
                     color="secondary"

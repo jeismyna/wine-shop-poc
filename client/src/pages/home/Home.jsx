@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   image: {
-    position: 'relative',
+    position: 'fixed',
     height: '100vh',
     [theme.breakpoints.down('xs')]: {
       width: '100% !important', // Overrides inline-style
-      height: 100,
+
     },
     '&:hover, &$focusVisible': {
       zIndex: 1,
@@ -46,13 +46,20 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.common.white,
   },
   imageSrc: {
-    position: 'absolute',
+    position: 'fixed',
     left: 0,
     right: 0,
     top: 0,
     bottom: 0,
+    backgroundRepeat: 'no-repeat',
+    backgroundOrigin: "padding-box",
     backgroundSize: 'cover',
     backgroundPosition: 'right 34%',
+    [theme.breakpoints.down('xs')]: {
+      backgroundPositionX: "45%",
+      backgroundPositionY: "30%",
+      backgroundSize: "380%"
+    }
   },
   imageBackdrop: {
     position: 'absolute',

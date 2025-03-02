@@ -30,6 +30,18 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
+  form: {
+    padding: "20px 220px",
+    backgroundColor: "#fff",
+    [theme.breakpoints.down('xs')]: {
+      padding: "20px 40px"
+    }
+  },
+  gridBlock: {
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: "12px"
+    }
+  }
 }));
 
 const steps = ["What's your name?", "How can we be in touch?", "Almost there"];
@@ -131,9 +143,12 @@ function UserDetailsForm(props) {
   const {
     formField: { username, password, firstName, lastName },
   } = props;
+  
+  const classes = useStyles();
+
   return (
     <React.Fragment>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.gridBlock}>
         <Grid item xs={12} sm={6}>
           <InputField name={username.name} label={username.label} fullWidth />
         </Grid>
@@ -176,8 +191,8 @@ function Summary() {
   return (
     <React.Fragment>
       <Grid container spacing={3} className="mb-4">
-        <Grid item xs={4}></Grid>
-        <Grid item xs={4} className={styles.textAlign}>
+        <Grid item xs={1}></Grid>
+        <Grid item xs={10} className={styles.textAlign}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Typography variant="h5">Plese check your details</Typography>
@@ -199,7 +214,7 @@ function Summary() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={4}></Grid>
+        <Grid item xs={1}></Grid>
       </Grid>
     </React.Fragment>
   );
@@ -271,7 +286,7 @@ export default function Signup(props) {
               </Step>
             ))}
           </Stepper>
-          <div className={styles.form}>
+          <div className={classes.form}>
             {activeStep === steps.length ? (
               <Redirect
                 to={{

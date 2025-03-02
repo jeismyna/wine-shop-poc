@@ -13,6 +13,7 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 import styles from "./Sidebar.module.css";
 import { NavLink } from "react-router-dom";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 
 function ListItemLink(props) {
   const { icon, primary, to, active, hidden } = props;
@@ -40,7 +41,7 @@ ListItemLink.propTypes = {
   primary: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   active: PropTypes.string,
-  hidden: PropTypes.bool,  
+  hidden: PropTypes.bool,
 };
 
 const drawerWidth = 240;
@@ -52,9 +53,15 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+    [theme.breakpoints.down('xs')]: {
+      width: "100%"
+    }
   },
   drawerPaper: {
     width: drawerWidth,
+    [theme.breakpoints.down('xs')]: {
+      width: "100%"
+    }
   },
   drawerContainer: {
     overflow: "auto",
@@ -63,6 +70,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Sidebar({ auth }) {
   const classes = useStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('xs'));
 
   return (
     <div className={classes.root} hidden={!auth.isLoggedIn}>
@@ -71,20 +80,21 @@ export default function Sidebar({ auth }) {
       <Drawer
         className={classes.drawer}
         variant="permanent"
+        anchor={matches ? "bottom" : "left"}
         classes={{
           paper: classes.drawerPaper,
         }}
       >
-        <Toolbar />
+        {!matches && <Toolbar />}
         <div className={classes.drawerContainer}>
           <List>
-              <ListItemLink
-                to="/login"
-                primary="Log In / Sign Up"
-                icon={<AccountCircleIcon />}
-                active={styles.active}
-                hidden={auth.isLoggedIn}
-              />
+            <ListItemLink
+              to="/login"
+              primary="Log In / Sign Up"
+              icon={<AccountCircleIcon />}
+              active={styles.active}
+              hidden={auth.isLoggedIn}
+            />
             <ListItemLink
               to="/shopping"
               primary="Start shopping"

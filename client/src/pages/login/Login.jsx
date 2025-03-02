@@ -64,12 +64,12 @@ function UserCredentialsForm(props) {
   return (
     <React.Fragment>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
-        <Grid item xs={5} sm={5}>
+        <Grid item xs={12} sm={10} md={5}>
           <InputField name={username.name} label={username.label} fullWidth/>
         </Grid>
       </Grid>
       <Grid container spacing={3} alignItems="center" justifyContent="center">
-        <Grid item xs={5} sm={5}>
+        <Grid item xs={12} sm={10} md={5}>
           <InputField name={password.name} label={password.label} fullWidth/>
         </Grid>
       </Grid>
